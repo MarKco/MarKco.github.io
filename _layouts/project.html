@@ -1,0 +1,26 @@
+---
+layout: default
+---
+{% assign lang = page.lang | default: site.lang %}
+{% assign strings = site.data.strings[lang] %}
+<div class="project-hero wrap">
+  <span class="kicker">{% if page.private_repo %}{{ strings.kicker_app }}{% else %}{{ strings.kicker_opensource }}{% endif %}</span>
+  <h1>{{ page.title }}</h1>
+  <p class="lede" style="color: var(--ink-soft); max-width: 60ch; font-size: 1.1rem;">{{ page.tagline }}</p>
+  <div class="meta-row">
+    {% if page.language %}<span class="tag">{{ page.language }}</span>{% endif %}
+    {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+  </div>
+  <div class="cta-row" style="margin: 20px 0 0;">
+    {% if page.github %}
+      <a class="btn btn-primary" href="{{ page.github }}" target="_blank" rel="noopener" style="background: var(--indigo); color: var(--paper);">{{ strings.btn_github }}</a>
+    {% endif %}
+    {% if page.playstore %}
+      <a class="btn btn-primary" href="{{ page.playstore }}" target="_blank" rel="noopener">{{ strings.btn_playstore }}</a>
+    {% endif %}
+  </div>
+</div>
+
+<div class="project-body wrap">
+  {{ content }}
+</div>

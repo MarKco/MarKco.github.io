@@ -1,0 +1,21 @@
+it:
+  nav_projects: "Progetti"
+  nav_about: "About"
+  kicker_app: "App"
+  kicker_opensource: "Progetto open source"
+  btn_github: "Codice su GitHub"
+  btn_playstore: "Scarica su Play Store"
+  footer_license: "Licenza"
+  footer_license_url: "/licenza/"
+  footer_rights: "Alcuni diritti riservati"
+
+en:
+  nav_projects: "Projects"
+  nav_about: "About"
+  kicker_app: "App"
+  kicker_opensource: "Open source project"
+  btn_github: "View code on GitHub"
+  btn_playstore: "Get it on Play Store"
+  footer_license: "License"
+  footer_license_url: "/en/license/"
+  footer_rights: "Some rights reserved"

@@ -1,0 +1,60 @@
+title: Marco Zanetti
+description: >-
+  Android developer.
+url: "https://markco.github.io"
+baseurl: ""
+lang: it
+
+author:
+  name: Marco Zanetti
+
+markdown: kramdown
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+permalink: /blog/:year/:month/:day/:title/
+
+collections:
+  projects:
+    output: true
+    permalink: /progetti/:path/
+  projects_en:
+    output: true
+    permalink: /en/projects/:path/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      lang: it
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+  - scope:
+      path: ""
+      type: projects_en
+    values:
+      layout: project
+      lang: en
+  - scope:
+      path: "en"
+    values:
+      lang: en
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - CLAUDE.md
+  - CONTENT-LICENSE.md
+  - vendor
+  # Blog nascosto per ora — rimuovere queste due righe per riattivarlo.
+  - _posts
+  - blog.html

@@ -1,0 +1,23 @@
+{% assign lang = page.lang | default: site.lang %}
+{% assign t = site.data.strings[lang] %}
+{% assign home_url = "/" %}
+{% if lang == "en" %}{% assign home_url = "/en/" %}{% endif %}
+{% assign alt_url = page.alt_url %}
+{% if alt_url == nil %}
+  {% if lang == "en" %}{% assign alt_url = "/" %}{% else %}{% assign alt_url = "/en/" %}{% endif %}
+{% endif %}
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="{{ home_url | relative_url }}">Marco Zanetti</a>
+    <div class="header-right">
+      <nav class="nav">
+        <a href="{{ home_url | relative_url }}#progetti">{{ t.nav_projects }}</a>
+        <a href="{{ home_url | append: 'about/' | relative_url }}">{{ t.nav_about }}</a>
+      </nav>
+      <a class="lang-switch" href="{{ alt_url | relative_url }}" lang="{% if lang == 'en' %}it{% else %}en{% endif %}">
+        {% if lang == "en" %}IT{% else %}EN{% endif %}
+      </a>
+    </div>
+  </div>
+</header>

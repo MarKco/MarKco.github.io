@@ -1,0 +1,37 @@
+---
+layout: default
+title: Home
+permalink: /en/
+alt_url: /
+---
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Android developer</span>
+    <h1>Marco Zanetti</h1>
+    <p class="lede">I build Android apps with an eye for detail.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#progetti">See projects</a>
+      <a class="btn btn-ghost" href="{{ site.data.social.website }}" target="_blank" rel="noopener">marcozanetti.it</a>
+    </div>
+  </div>
+</section>
+
+<section id="progetti" class="block">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <p class="section-lede">Apps and tools I've written, from open source on GitHub to what's published on the Play Store.</p>
+    <div class="grid">
+      {% assign projects = site.projects_en | sort: 'order' %}
+      {% for project in projects %}
+        <a class="card{% if project.featured %} featured{% endif %}" href="{{ project.url | relative_url }}">
+          <span class="card-title">{{ project.title }}</span>
+          <span class="card-tagline">{{ project.tagline }}</span>
+          <span class="tags">
+            {% if project.language %}<span class="tag">{{ project.language }}</span>{% endif %}
+            {% if project.playstore %}<span class="tag">Play Store</span>{% endif %}
+          </span>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

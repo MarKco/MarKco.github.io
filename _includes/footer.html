@@ -1,0 +1,13 @@
+{% assign lang = page.lang | default: site.lang %}
+{% assign t = site.data.strings[lang] %}
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; {{ site.time | date: '%Y' }} Marco Zanetti · {{ t.footer_rights }}</p>
+    <div class="footer-links">
+      <a href="{{ site.data.social.github }}" target="_blank" rel="noopener">GitHub</a>
+      <a href="{{ site.data.social.website }}" target="_blank" rel="noopener">marcozanetti.it</a>
+      <a href="{{ t.footer_license_url | relative_url }}">{{ t.footer_license }}</a>
+    </div>
+  </div>
+</footer>
